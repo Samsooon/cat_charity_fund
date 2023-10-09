@@ -1,8 +1,8 @@
 from sqlalchemy.ext.asyncio import AsyncSession
 from fastapi import HTTPException
 
-from app.crud.charity_projects import charity_project_crud
-from app.models.charity_projects import CharityProject
+from app.crud.charity_project import charity_project_crud
+from app.models.charity_project import CharityProject
 
 
 async def check_project_name_dup(

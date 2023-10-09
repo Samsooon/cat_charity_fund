@@ -1,9 +1,9 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.crud.charity_projects import charity_project_crud
+from app.crud.charity_project import charity_project_crud
 from app.core.db import get_async_session
-from app.schemas.charity_projects import(
+from app.schemas.charity_project import(
     CharityProjectCreate, CharityProjectUpdate, CharityProjectDB
 )
 from app.api.validators import check_project_name_dup

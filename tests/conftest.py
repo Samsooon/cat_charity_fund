@@ -30,7 +30,7 @@ except (NameError, ImportError):
     raise AssertionError(
         'Не обнаружены объекты `current_superuser, current_user`.'
         'Проверьте и поправьте: они должны быть доступны в модуле '
-        '`app.code.user`',
+        '`app.core.user`',
     )
 
 try:
