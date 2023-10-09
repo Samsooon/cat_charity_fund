@@ -13,4 +13,3 @@ class CharityProject(AbstractBase):
         Text,
         nullable=False
     )
-

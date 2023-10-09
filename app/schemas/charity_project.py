@@ -30,11 +30,9 @@ class CharityProjectCreate(CharityProjectBase):
         min_length=1,
         max_length=100,
     )
-    description: Optional[str] = Field(
+    description: str = Field(
         ...,
-        min_length=1,
-        title='Имя проекта',
-        description='Описание проекта'
+        min_length=1
     )
     full_amount: PositiveInt = Field(
         ...,
@@ -50,10 +48,13 @@ class CharityProjectCreate(CharityProjectBase):
                     'Имя не может быть больше 100 символов'
                 )
             if value.isnumeric():
-                raise  ValueError(
+                raise ValueError(
                     'Имя не может быть числом'
                 )
             return value
+
+        class CharityProjectUpdate(CharityProjectBase):
+            pass
 
         @root_validator(skip_on_failure=True)
         def check_empty_fields(self, values):
